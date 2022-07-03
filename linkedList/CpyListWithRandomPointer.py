@@ -7,24 +7,25 @@ class Node:
         self.random = random
 
 def copyRandomList(head: 'Optional[Node]') -> 'Optional[Node]':
-    headnew = head
-    while headnew:
-        temp = Node(headnew.val)
-        nxt = headnew.next
-        headnew.next = temp
+    head_new = head
+    while head_new:
+        temp = Node(head_new.val)
+        nxt = head_new.next
+        head_new.next = temp
         temp.next = nxt
-        headnew = headnew.next.next
-    headnew = head
-    newhead = headnew.next
-    while headnew:
-        if headnew.random and headnew.next: headnew.next.random = headnew.random.next
-        headnew = headnew.next.next
-    headnew = head
-    while headnew.next:
-        temp = headnew.next
-        headnew.next = headnew.next.next
-        headnew = temp
-    return newhead
+        head_new = head_new.next.next
+    head_new = head
+    new_head = head_new.next
+    while head_new:
+        if head_new.random and head_new.next:
+            head_new.next.random = head_new.random.next
+        head_new = head_new.next.next
+    head_new = head
+    while head_new.next:
+        temp = head_new.next
+        head_new.next = head_new.next.next
+        head_new = temp
+    return new_head
 
 
 if __name__ == '__main__':
